@@ -1,0 +1,22 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10%;
+    border: 7px double rgb(153, 146, 11);
+}
+
+td,
+th {
+    border: 3px solid #070000;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f465da;
+}
+
+#checkoutTotal{
+    background-color: rgb(255, 0, 221);
+}

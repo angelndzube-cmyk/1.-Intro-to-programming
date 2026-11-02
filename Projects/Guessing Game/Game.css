@@ -1,0 +1,104 @@
+/* Smooth transitions for background color changes */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Central game board box */
+.game-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 320px;
+    z-index: 10;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Styled text input and buttons */
+input, button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input {
+    background-color: white;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Game state color overrides */
+body.wrong-guess {
+    background-color: #c0392b; /* Red background for too high/low */
+}
+
+body.correct-guess {
+    background-color: #27ae60; /* Green background for winning */
+}
+
+/* Sparkle elements configuration */
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 2px #fff, 0 0 20px 5px #f1c40f;
+    animation: flyUp 2s linear infinite;
+    pointer-events: none;
+}
+
+/* Animation to make sparkles burst upward and fade out */
+@keyframes flyUp {
+    0% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(var(--random-x)) scale(1.5);
+        opacity: 0;
+    }
+}
